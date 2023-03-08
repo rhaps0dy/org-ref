@@ -279,7 +279,7 @@ BACKEND is the org export backend."
 	   ;; list of links in the buffer
 	   (cite-links (org-element-map (org-element-parse-buffer) 'link
 			 (lambda (lnk)
-			   (when (assoc (org-element-property :type lnk) org-ref-cite-types)
+			   (when (member (org-element-property :type lnk) org-ref-cite-types)
 			     lnk))))
 
 	   (cites (cl-loop for cl in cite-links collect
